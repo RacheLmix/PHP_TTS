@@ -1,0 +1,152 @@
+/* ===== BUTTONS + HOVER FX (neon glow + pulse) ===== */
+button, .btn {
+  position: relative;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 12px 30px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+button:hover, .btn:hover {
+  animation: pulseGlow 1.5s infinite alternate;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff416c, 0 0 40px #ff4b2b;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b;
+  }
+  100% {
+    box-shadow: 0 0 30px #ff416c, 0 0 60px #ff4b2b;
+  }
+}
+
+/* ===== GLASSMORPHISM EFFECT ON INPUT FIELDS ===== */
+input, select, textarea {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 15px #ff416c;
+  outline: none;
+}
+
+/* ===== LOGS SCROLL + SCROLLBAR CUSTOM ===== */
+.logs {
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #ff416c transparent;
+}
+
+.logs::-webkit-scrollbar {
+  width: 8px;
+}
+
+.logs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.logs::-webkit-scrollbar-thumb {
+  background-color: #ff416c;
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+
+/* ===== TOAST POSITIONING ===== */
+.toast {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+/* ===== DARK MODE BACKGROUND OVERRIDE ===== */
+body.dark {
+  background: linear-gradient(135deg, #121212, #1c1c1c, #282828);
+  color: #eee;
+}
+
+/* ===== BUTTONS DARK MODE OVERRIDE ===== */
+body.dark button, body.dark .btn {
+  background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+  box-shadow: 0 0 15px #00ffdd;
+  color: #00ffdd;
+}
+
+body.dark button:hover, body.dark .btn:hover {
+  box-shadow: 0 0 30px #00ffdd;
+  transform: scale(1.1);
+}
+
+/* ===== LOADING SPINNER DARK MODE ===== */
+body.dark .spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid #00ffdd;
+}
+
+/* ===== PAGE TRANSITION (Marvel cinematic vibes) ===== */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card, .logs, form, header {
+  animation: pageFadeIn 0.7s ease forwards;
+}
+
+/* ===== EXTRA: SHINY ANIMATION ON HEADER ===== */
+header {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #ff4b2b;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shiny 2s infinite;
+}
+
+@keyframes shiny {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
