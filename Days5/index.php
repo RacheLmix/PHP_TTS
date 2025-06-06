@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? 'Không rõ hành động';
     $fileInfo = $_FILES['evidence'] ?? null;
 
-    // Upload file nếu có
     $uploadedFile = '';
     if ($fileInfo && $fileInfo['error'] === 0) {
         $uploadResult = handleUpload($fileInfo);
@@ -21,12 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Ghi log
     writeLog($action, $uploadedFile);
     $toast = "Hành động đã được ghi vào log.";
 }
 ?>
-
 <div class="container glass">
     <h2>Nhật ký hoạt động hệ thống</h2>
     <form method="POST" enctype="multipart/form-data">
@@ -38,6 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <div id="toast"><?= $toast ?></div>
-<div class="spinner" id="spinner"></div>
+
 
 <script src="assets/script.js"></script>
