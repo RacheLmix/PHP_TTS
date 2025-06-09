@@ -1,0 +1,19 @@
+{
+    "customer_email": "tungxeko912@gmail.com",
+    "products": [
+        {
+            "title": "Clean Code",
+            "quantity": 30,
+            "price": 150000
+        },
+        {
+            "title": "Design Patterns",
+            "quantity": 90,
+            "price": 200000
+        }
+    ],
+    "customer_phone": "0936966857",
+    "customer_address": "123",
+    "total_amount": 22500000,
+    "created_at": "2025-06-09 06:34:11"
+}
