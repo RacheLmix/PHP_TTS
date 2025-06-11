@@ -1,0 +1,15 @@
+{
+    "name": "rachel/days8",
+    "autoload": {
+        "psr-4": {
+            "XYZBank\\Accounts\\": "src/XYZBank/Accounts/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rachel",
+            "email": "tungxeko912@gmail.com"
+        }
+    ],
+    "require": {}
+}
